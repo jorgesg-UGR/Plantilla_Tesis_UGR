@@ -34,7 +34,7 @@
 \documentclass[twoside,openright,titlepage,numbers=noenddot,headinclude,%1headlines,% letterpaper a4paper
                 footinclude=true,cleardoublepage=empty,abstractoff, % <--- obsolete, remove (todo)
                 %BCOR=20mm,paper=a4paper,a4paper,fontsize=11pt,%11pt,a4paper,%
-                BCOR=20mm,a4paper,fontsize=11pt,%11pt,a4paper,%
+                BCOR=5mm,paper=b5paper,b5paper,fontsize=11pt,%11pt,a4paper,%
                 %BCOR=5mm,paper=a5paper,a5paper,fontsize=11pt,%11pt,a4paper,%
                 %,american,%
                 dottedtoc
@@ -91,8 +91,8 @@
 %\cleardoublepage\include{FrontBackmatter/Dedication}
 %\cleardoublepage\include{FrontBackmatter/Foreword}
 \cleardoublepage\include{FrontBackmatter/Abstract}
-\cleardoublepage\include{FrontBackmatter/Publications}
-\cleardoublepage\include{FrontBackmatter/Acknowledgments_real}
+%\cleardoublepage\include{FrontBackmatter/Publications} %DESCOMENTAR
+\cleardoublepage\include{FrontBackmatter/Acknowledgments}
 %\cleardoublepage\include{FrontBackmatter/Acknowledgments}
 \pagestyle{scrheadings}
 \cleardoublepage\include{FrontBackmatter/Contents}
@@ -104,7 +104,7 @@
 % use \cleardoublepage here to avoid problems with pdfbookmark
 \cleardoublepage
 \part{Introducción y Revisión Bibliográfica}
-\AddLabels
+%\AddLabels
 %\adjustmtc %No comentar
 \include{Capitulos/c01/01_1_Introduccion}
 %\include{Capitulos/c02/02_Antecedentes}
@@ -123,7 +123,7 @@
 % Backmatter
 %*******************************************************
 \appendix
-\RemoveLabels
+%\RemoveLabels
 %\renewcommand{\thechapter}{\alph{chapter}}
 \cleardoublepage
 
@@ -131,7 +131,7 @@
 
 \part{Anexos y Bibliograf\'ia}
 
-\include{Capitulos/anexos/_anexos}
+%\include{Capitulos/anexos/_anexos}
 
 %********************************************************************
 % Other Stuff in the Back
