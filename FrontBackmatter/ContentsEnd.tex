@@ -1,0 +1,128 @@
+%*******************************************************
+% Table of Contents
+%*******************************************************
+%\phantomsection
+
+\setlength{\cftbeforetoctitleskip}{-3em}
+
+\renewcommand{\contentsname}{\'Indice Detallado}
+
+\selectlanguage{spanish}
+\refstepcounter{dummy}
+\pdfbookmark[1]{\contentsname}{tableofcontents}
+%\setcounter{tocdepth}{3}
+\setcounter{tocdepth}{4}
+\dominitoc
+\tableofcontents
+%\markboth{\spacedlowsmallcaps{\contentsname}}{\spacedlowsmallcaps{\contentsname}}
+\markboth{\textsc{\contentsname}}{\textsc{\contentsname}}
+%*******************************************************
+% work-around to have small caps also here in the headline
+% will not work at this place if the TOC has more than 2 pages
+% use \manualmark and then the \markboth as above
+% later a modification of \automark[section]{chapter}
+%*******************************************************
+% List of Figures and of the Tables
+%*******************************************************
+\clearpage
+
+
+% \begingroup
+%     \let\clearpage\relax
+%     \let\cleardoublepage\relax
+%     \let\cleardoublepage\relax
+
+%     %*******************************************************
+%     % List of Experimentos
+%     %*******************************************************
+%     %\phantomsection
+%     \refstepcounter{dummy}
+%     %\addcontentsline{toc}{chapter}{\listfigurename}
+%     \pdfbookmark[1]{\listExperimentosname}{exp}
+%     \phantomsection
+%     \addcontentsline{toc}{chapter}{\listExperimentosname}
+%     \listofExperimentos \adjustmtc
+%     \vspace*{8ex}
+
+% \clearpage    
+
+%     %*******************************************************
+%     % List of Figures
+%     %*******************************************************
+%     %\phantomsection
+%     \refstepcounter{dummy}
+%     %\addcontentsline{toc}{chapter}{\listfigurename}
+%     \pdfbookmark[1]{\listfigurename}{lof}
+%         \phantomsection
+%     \addcontentsline{toc}{chapter}{\listfigurename}
+%     \listoffigures \adjustmtc
+
+%     \vspace*{8ex}
+
+% \clearpage
+
+%     %*******************************************************
+%     % List of Tables
+%     %*******************************************************
+%     %\phantomsection
+%     \refstepcounter{dummy}
+%     %\addcontentsline{toc}{chapter}{\listtablename}
+%     \pdfbookmark[1]{\listtablename}{lot}
+%         \phantomsection
+%     \addcontentsline{toc}{chapter}{\listtablename}
+%     \listoftables \adjustmtc
+
+%     \vspace*{8ex}
+% %   \newpage
+
+% \clearpage
+
+%     %*******************************************************
+%     % List of Listings
+%     %*******************************************************
+% %   %\phantomsection
+%    \refstepcounter{dummy}
+% %   %\addcontentsline{toc}{chapter}{\lstlistlistingname}
+% %   \pdfbookmark[1]{\lstlistlistingname}{lol}
+%    %\listofalgorithms
+% %   \lstlistoflistings
+
+
+%     % \renewcommand{\ALG@name}{MegaAlgorithm}
+% %    \makeatletter
+%     %\renewcommand*{\ALG@name}{C\'odigo}
+% %    \makeatother
+%     \addtocontents{loa}{\def\string\figurename{C\'odigo}}
+%     \addcontentsline{toc}{chapter}{\'Indice de algoritmos y c\'odigos}
+%     \listof{algorithm}{\'Indice de algoritmos y c\'odigos} \adjustmtc
+%     \phantomsection
+
+% %\vspace*{8ex}
+
+%     %*******************************************************
+%     % Acronyms
+%     %*******************************************************
+%     %\phantomsection
+%     \refstepcounter{dummy}
+
+% %\chapter*{Glosarios de t\'erminos}
+% %\setglossarysection{chapter}
+
+% %\setglossarystyle{altlistgroup}
+% %\setglossarystyle{altlistgroup}
+% %\setacronymstyle{listdotted}
+% %\setacronymstyle{altlistgroup}
+% %\setglossarystyle{⟨style name⟩}
+% %\glsaddall %MOSTRAR TODAS 
+% %\glsaddallunused %MOSTRAR LAS NO USADAS
+% %\printglossaries
+
+% \clearpage
+
+% \printglossary[title={Lista de t\'erminos},toctitle={Listado de t\'erminos}]
+% \pdfbookmark[1]{Glosario}{glosario}
+
+% \endgroup
+
+
+\cleardoublepage 

@@ -1,0 +1,148 @@
+% **************************************************************************************************
+% A Classic Thesis Style
+% An Homage to The Elements of Typographic Style
+%
+% Copyright (C) 2015 André Miede http://www.miede.de
+%
+% If you like the style then I would appreciate a postcard. My address
+% can be found in the file ClassicThesis.pdf. A collection of the
+% postcards I received so far is available online at
+% http://postcards.miede.de
+%
+% License:
+% This program is free software; you can redistribute it and/or modify
+% it under the terms of the GNU General Public License as published by
+% the Free Software Foundation; either version 2 of the License, or
+% (at your option) any later version.
+%
+% This program is distributed in the hope that it will be useful,
+% but WITHOUT ANY WARRANTY; without even the implied warranty of
+% MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+% GNU General Public License for more details.
+%
+% You should have received a copy of the GNU General Public License
+% along with this program; see the file COPYING.  If not, write to
+% the Free Software Foundation, Inc., 59 Temple Place - Suite 330,
+% Boston, MA 02111-1307, USA.
+%
+% Adaptado a la Universidad de Granada por:
+% Antonio Fernández Ares - antares@ugr.es
+
+% ************************************************************************************************
+
+\RequirePackage{fix-cm} % fix some latex issues see: http://texdoc.net/texmf-dist/doc/latex/base/fixltx2e.pdf
+\documentclass[twoside,openright,titlepage,numbers=noenddot,headinclude,%1headlines,% letterpaper a4paper
+                footinclude=true,cleardoublepage=empty,abstractoff, % <--- obsolete, remove (todo)
+                %BCOR=20mm,paper=a4paper,a4paper,fontsize=11pt,%11pt,a4paper,%
+                BCOR=20mm,a4paper,fontsize=11pt,%11pt,a4paper,%
+                %BCOR=5mm,paper=a5paper,a5paper,fontsize=11pt,%11pt,a4paper,%
+                %,american,%
+                dottedtoc
+                ]{scrreprt}
+
+%********************************************************************
+% Note: Make all your adjustments in here
+%*******************************************************
+
+\input{tesis-config}
+
+%Margenes pesonalizados
+\usepackage[left=4cm,right=4cm,top=1.4cm,bottom=1.4cm,includehead,includefoot,asymmetric,twoside]{geometry}
+%\usepackage[left=4.3cm,right=4.3cm,top=5cm,bottom=4.7cm,includehead,includefoot]{geometry}
+
+%********************************************************************
+% Bibliographies
+%*******************************************************
+\addbibresource[label=jcr]{mypublications/JCRtesis.bib}
+\addbibresource[label=congresos]{mypublications/congresosTesis.bib}
+\addbibresource[label=jcrNO]{mypublications/JCRnotesis.bib}
+\addbibresource[label=jcrNONO]{mypublications/JCRnotesisnoprimer.bib}
+\addbibresource[label=congresosNO]{mypublications/congresosNoTesis.bib}
+\addbibresource[label=libros]{mypublications/libros.bib}
+\addbibresource{tesis.bib}
+
+
+%********************************************************************
+% Hyphenation
+%*******************************************************
+%\hyphenation{put special hyphenation here}
+
+% ********************************************************************
+% GO!GO!GO! MOVE IT!
+%*******************************************************
+
+\begin{document}
+\frenchspacing
+\raggedbottom
+
+\selectlanguage{spanish} % american ngerman TO DO - COMPROBAR
+%\renewcommand*{\bibname}{new name}
+%\setbibpreamble{}
+\pagenumbering{roman}
+\pagestyle{plain}
+%********************************************************************
+% Frontmatter
+%*******************************************************
+\include{FrontBackmatter/DirtyTitlepage}
+\pagecolor{white}
+\include{FrontBackmatter/Titlepage}
+\include{FrontBackmatter/Titleback}
+\cleardoublepage\include{FrontBackmatter/Dedication_real}
+%\cleardoublepage\include{FrontBackmatter/Dedication}
+%\cleardoublepage\include{FrontBackmatter/Foreword}
+\cleardoublepage\include{FrontBackmatter/Abstract}
+\cleardoublepage\include{FrontBackmatter/Publications}
+\cleardoublepage\include{FrontBackmatter/Acknowledgments_real}
+%\cleardoublepage\include{FrontBackmatter/Acknowledgments}
+\pagestyle{scrheadings}
+\cleardoublepage\include{FrontBackmatter/Contents}
+%********************************************************************
+% Mainmatter
+%*******************************************************
+\cleardoublepage\pagenumbering{arabic}
+%\setcounter{page}{90}
+% use \cleardoublepage here to avoid problems with pdfbookmark
+\cleardoublepage
+\part{Introducción y Revisión Bibliográfica}
+\AddLabels
+%\adjustmtc %No comentar
+\include{Capitulos/c01/01_1_Introduccion}
+%\include{Capitulos/c02/02_Antecedentes}
+%\include{Capitulos/c03/03_EstadoArte}
+%\part{Marco teórico, prototipo y metodología}
+%\adjustmtc  %No descomentar
+%\include{Capitulos/c04/04_Fundamentos}
+%\include{Capitulos/c05/05_Monitorizacion_dividido}
+%\part{Resultados}
+%\adjustmtc %No descomentar
+%\include{Capitulos/c06/06_Experimentos}
+%\include{Capitulos/c07/07_Conclusiones}
+\cleardoublepage
+
+% ********************************************************************
+% Backmatter
+%*******************************************************
+\appendix
+\RemoveLabels
+%\renewcommand{\thechapter}{\alph{chapter}}
+\cleardoublepage
+
+\mtcsettitle{minitoc}{\'Indice del anexo}
+
+\part{Anexos y Bibliograf\'ia}
+
+\include{Capitulos/anexos/_anexos}
+
+%********************************************************************
+% Other Stuff in the Back
+%*******************************************************
+\cleardoublepage\include{FrontBackmatter/Bibliography}
+%\cleardoublepage\include{FrontBackmatter/ContentsEnd}
+\cleardoublepage\include{FrontBackmatter/Declaration}
+%\cleardoublepage\include{FrontBackmatter/Colophon}
+% ********************************************************************
+% Game Over: Restore, Restart, or Quit?
+%*******************************************************
+\end{document}
+% ********************************************************************
+

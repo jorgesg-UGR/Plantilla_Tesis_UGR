@@ -1,0 +1,1015 @@
+% ****************************************************************************************************
+% classicthesis-config.tex 
+% formerly known as loadpackages.sty, classicthesis-ldpkg.sty, and classicthesis-preamble.sty 
+% Use it at the beginning of your ClassicThesis.tex, or as a LaTeX Preamble 
+% in your ClassicThesis.{tex,lyx} with \input{classicthesis-config}
+% ****************************************************************************************************  
+% If you like the classicthesis, then I would appreciate a postcard. 
+% My address can be found in the file ClassicThesis.pdf. A collection 
+% of the postcards I received so far is available online at 
+% http://postcards.miede.de
+% ****************************************************************************************************
+
+%Variable para controlar si es a color o en grises
+
+\newif\ifColor
+\Colortrue
+%\Colorfalse
+
+\newcommand{\colordepende}[2]
+{\ifColor #1 \else #2 \fi }
+
+% ****************************************************************************************************
+% 0. Set the encoding of your files. UTF-8 is the only sensible encoding nowadays. If you can't read
+% äöüßáéçèê∂åëæƒÏ€ then change the encoding setting in your editor, not the line below. If your editor
+% does not support utf8 use another editor!
+% ****************************************************************************************************
+\PassOptionsToPackage{utf8}{inputenc}
+	\usepackage[utf8]{inputenc}
+
+% ****************************************************************************************************
+% 1. Configure classicthesis for your needs here, e.g., remove "drafting" below 
+% in order to deactivate the time-stamp on the pages
+% ****************************************************************************************************
+\PassOptionsToPackage{eulerchapternumbers,listings,drafting,%
+					 pdfspacing,%linedheaders,%floatperchapter,%linedheaders,%
+					 subfig,beramono,eulermath,parts}{classicthesis}                                        
+% ********************************************************************
+% Available options for classicthesis.sty 
+% (see ClassicThesis.pdf for more information):
+% drafting
+% parts nochapters linedheaders
+% eulerchapternumbers beramono eulermath pdfspacing minionprospacing
+% tocaligned dottedtoc manychapters
+% listings floatperchapter subfig
+% ********************************************************************
+
+
+% ****************************************************************************************************
+% 2. Personal data and user ad-hoc commands
+% ****************************************************************************************************
+\newcommand{\myTitle}{Sistema Inteligente de Captaci\'on de Comunicaciones Inal\'ambricas para el An\'alisis y Predicci\'on de la Movilidad mediante Soft Computing\xspace}
+\newcommand{\mySubtitle}{ \xspace}
+\newcommand{\myDegree}{Doctor en Tecnolog\'ias de la Informaci\'on y la Comunicaci\'on\xspace}
+\newcommand{\myName}{Antonio J. Fern\'andez Ares\xspace}
+\newcommand{\myProf}{Pedro A. Castillo Valdivieso\xspace}
+\newcommand{\myOtherProf}{Mar\'ia Isabel Garc\'ia Arenas\xspace}
+\newcommand{\mySupervisor}{Put name here\xspace}
+\newcommand{\myFaculty}{Escuela T\'ecnica Superior de Ingenier\'ias en Inform\'atica y Telecomunicaciones\xspace}
+\newcommand{\myDepartment}{Departamento de Arquitectura y Tecnolog\'ia de los computadores\xspace}
+\newcommand{\myUni}{TIC024 - Software Libre para Optimizaci\'on, B\'usqueda y Aprendizaje\xspace}
+\newcommand{\myLocation}{Granada\xspace}
+\newcommand{\myTime}{Junio 2019\xspace}
+\newcommand{\myVersion}{version 0.9\xspace}
+
+% ********************************************************************
+% Setup, finetuning, and useful commands
+% ********************************************************************
+\newcounter{dummy} % necessary for correct hyperlinks (to index, bib, etc.)
+\newlength{\abcd} % for ab..z string length calculation
+\providecommand{\mLyX}{L\kern-.1667em\lower.25em\hbox{Y}\kern-.125emX\@}
+\newcommand{\ie}{i.\,e.}
+\newcommand{\Ie}{I.\,e.}
+\newcommand{\eg}{e.\,g.}
+\newcommand{\Eg}{E.\,g.} 
+% ****************************************************************************************************
+
+
+% ****************************************************************************************************
+% 3. Loading some handy packages
+% ****************************************************************************************************
+% ******************************************************************** 
+% Packages with options that might require adjustments
+% ******************************************************************** 
+%\PassOptionsToPackage{ngerman,american}{babel}   % change this to your language(s)
+% Spanish languages need extra options in order to work with this template
+%\PassOptionsToPackage{spanish,es-lcroman}{babel}
+%	\usepackage{babel}   
+
+
+\usepackage[spanish,es-lcroman,es-tabla,english]{babel}
+          
+
+%\usepackage{csquotes}
+%\PassOptionsToPackage{%
+%    %backend=biber, %instead of bibtex
+%	backend=bibtex8,
+%    bibencoding=ascii,%
+%	language=auto,%
+%	style=numeric-comp,%
+%    %style=authoryear-comp, % Author 1999, 2010
+%    %bibstyle=authoryear,dashed=false, % dashed: substitute rep. author with ---
+%    sorting=nyt, % name, year, title
+%    maxbibnames=10, % default: 3, et al.
+%    %backref=true,%
+%    natbib=true % natbib compatibility mode (\citep and \citet still work)
+%}{biblatex}
+%    \usepackage{biblatex}
+
+\PassOptionsToPackage{fleqn}{amsmath}       % math environments and more by the AMS 
+    \usepackage{amsmath}
+
+
+
+\usepackage{csquotes}
+\PassOptionsToPackage{%
+    %backend=biber, %instead of bibtex
+	backend=biber,
+    bibencoding=utf8,%utf8
+	language=auto,%
+	style=numeric-comp,%
+    %style=reading,%
+    %citestyle=numeric-comp,
+    %style=authoryear-comp, % Author 1999, 2010
+    %bibstyle=authoryear,dashed=false, % dashed: substitute rep. author with ---
+    sorting=nyt, % orden de la bibliografía name, year, title
+    maxbibnames=10, % default: 3, et al.
+    %backref=true,%
+    natbib=true % natbib compatibility mode (\citep and \citet still work)
+}{biblatex}
+    \usepackage{biblatex}
+
+\PassOptionsToPackage{fleqn}{amsmath}       % math environments and more by the AMS 
+    \usepackage{amsmath}
+
+% ******************************************************************** 
+% General useful packages
+% ******************************************************************** 
+
+
+
+
+\PassOptionsToPackage{T1}{fontenc} % T2A for cyrillics
+    \usepackage{fontenc}     
+\usepackage{textcomp} % fix warning with missing font shapes
+\usepackage{scrhack} % fix warnings when using KOMA with listings package          
+\usepackage{xspace} % to get the spacing after macros right  
+\usepackage{mparhack} % get marginpar right
+\usepackage{fixltx2e} % fixes some LaTeX stuff --> since 2015 in the LaTeX kernel (see below)
+%\usepackage[latest]{latexrelease} % will be used once available in more distributions (ISSUE #107)
+\PassOptionsToPackage{printonlyused,smaller}{acronym} 
+    \usepackage{acronym} % nice macros for handling all acronyms in the thesis
+    %\renewcommand{\bflabel}[1]{{#1}\hfill} % fix the list of acronyms --> no longer working
+    %\renewcommand*{\acsfont}[1]{\textsc{#1}} 
+    %\renewcommand*{\aclabelfont}[1]{\acsfont{#1}}
+    %\def\bflabel#1{{#1\hfill}}
+    \def\bflabel#1{{\acsfont{#1}\hfill}}
+    \def\aclabelfont#1{\acsfont{#1}}% ****************************************************************************************************
+
+
+% ****************************************************************************************************
+% 4. Setup floats: tables, (sub)figures, and captions
+% ****************************************************************************************************
+\usepackage{tabularx} % better tables
+    \setlength{\extrarowheight}{3pt} % increase table row height
+\newcommand{\tableheadline}[1]{\multicolumn{1}{c}{\spacedlowsmallcaps{#1}}}
+\newcommand{\myfloatalign}{\centering} % to be used with each float for alignment
+\usepackage{caption}
+% Thanks to cgnieder and Claus Lahiri
+% http://tex.stackexchange.com/questions/69349/spacedlowsmallcaps-in-caption-label
+% [REMOVED DUE TO OTHER PROBLEMS, SEE ISSUE #82]    
+%\DeclareCaptionLabelFormat{smallcaps}{\bothIfFirst{#1}{~}\MakeTextLowercase{\textsc{#2}}}
+%\captionsetup{font=small,labelformat=smallcaps} % format=hang,
+%\captionsetup{font=normalsize,justification=centering,singlelinecheck=false} % format=hang,
+\captionsetup{font=normalsize,justification=centering,singlelinecheck=false} % format=hang,
+\usepackage{subfig}
+% ****************************************************************************************************
+
+
+% ****************************************************************************************************
+% 5. Setup code listings
+% ****************************************************************************************************
+%\usepackage{listings} 
+%\lstset{emph={trueIndex,root},emphstyle=\color{BlueViolet}}%\underbar} % for special keywords
+% \lstset{language=[LaTeX]Tex,%C++,
+%     morekeywords={PassOptionsToPackage,selectlanguage},
+%     keywordstyle=\color{RoyalBlue},%\bfseries,
+%     basicstyle=\small\ttfamily,
+%     %identifierstyle=\color{NavyBlue},
+%     commentstyle=\color{Green}\ttfamily,
+%     stringstyle=\rmfamily,
+%     numbers=none,%left,%
+%     numberstyle=\scriptsize,%\tiny
+%     stepnumber=5,
+%     numbersep=8pt,
+%     showstringspaces=false,
+%     breaklines=true,
+%     %frameround=ftff,
+%     %frame=single,
+%     belowcaptionskip=.75\baselineskip
+%     %frame=L
+% } 
+
+%ANTARES: Para añadir pseudocódigos
+
+\usepackage[chapter]{algorithm}
+\floatname{algorithm}{C\'odigo}
+\usepackage{algpseudocode} 
+\usepackage{minted}
+
+\makeatletter
+\let\algorithmname\fname@algorithm\space  
+
+\setminted{
+xleftmargin=5pt, %Puesto esto para arreglarlo dentro de los bloques de experimentos
+linenos=true,
+%frame=lines,
+frame=leftline,
+frame=single,
+%xleftmargin=\parindent, % Quitado esto para arreglarlo dentro de los bloques de experimentos
+framerule=1pt,
+numberblanklines=true,
+showspaces=false,
+breaklines=true,
+fontsize=\footnotesize}
+
+
+% ****************************************************************************************************
+
+
+
+
+% ****************************************************************************************************
+% 6. PDFLaTeX, hyperreferences and citation backreferences
+% ****************************************************************************************************
+% ********************************************************************
+% Using PDFLaTeX
+% ********************************************************************
+%\PassOptionsToPackage{hyphens}{url} %romper urls
+\PassOptionsToPackage{pdftex,hyperfootnotes=true,pdfpagelabels}{hyperref}
+    \usepackage{hyperref}  % backref linktocpage pagebackref %DESCOMENTAR PARA REFERENCIAS EN COLOR
+
+%Enlace en los footnote
+\usepackage[symbol=$\uparrow$]{footnotebackref}
+
+
+%Para usar el resizebox y más cosas chulas
+\pdfcompresslevel=9
+\pdfadjustspacing=1 
+\PassOptionsToPackage{pdftex}{graphicx}
+    \usepackage{graphicx} 
+ 
+
+% ********************************************************************
+% Hyperreferences
+% ********************************************************************
+\hypersetup{%
+    %draft, % = no hyperlinking at all (useful in b/w printouts)
+    colorlinks=true, linktocpage=true, pdfstartpage=3, pdfstartview=FitV,%
+    % uncomment the following line if you want to have black links (e.g., for printing)
+    %colorlinks=false, linktocpage=false, pdfstartpage=3, pdfstartview=FitV, pdfborder={0 0 0},%
+    breaklinks=true, pdfpagemode=UseNone, pageanchor=true, pdfpagemode=UseOutlines,%
+    plainpages=false, bookmarksnumbered, bookmarksopen=true, bookmarksopenlevel=1,%
+    hypertexnames=true, pdfhighlight=/O,%nesting=true,%frenchlinks,%
+    urlcolor=webbrown, linkcolor=RoyalBlue, citecolor=webgreen, %pagecolor=RoyalBlue,%
+    %urlcolor=Black, linkcolor=Black, citecolor=Black, %pagecolor=Black,%
+    pdftitle={\myTitle},%
+    pdfauthor={\textcopyright\ \myName, \myUni, \myFaculty},%
+    pdfsubject={},%
+    pdfkeywords={},%
+    pdfcreator={pdfLaTeX},%
+    pdfproducer={LaTeX with hyperref and classicthesis}%
+}   
+
+% ********************************************************************
+% Setup autoreferences
+% ********************************************************************
+% There are some issues regarding autorefnames
+% http://www.ureader.de/msg/136221647.aspx
+% http://www.tex.ac.uk/cgi-bin/texfaq2html?label=latexwords
+% you have to redefine the makros for the 
+% language you use, e.g., american, ngerman
+% (as chosen when loading babel/AtBeginDocument)
+% ********************************************************************
+\makeatletter
+\@ifpackageloaded{babel}%
+    {%
+       \addto\extrasspanish{%
+			\renewcommand*{\figureautorefname}{Figura}%
+			\renewcommand*{\tableautorefname}{Tabla}%
+			\renewcommand*{\partautorefname}{Parte}%
+			\renewcommand*{\chapterautorefname}{Capítulo}%
+			\renewcommand*{\sectionautorefname}{Secci\'on}%
+			\renewcommand*{\subsectionautorefname}{Secci\'on}%
+			\renewcommand*{\subsubsectionautorefname}{Secci\'on}%     
+                }%
+       \addto\extrasngerman{% 
+			\renewcommand*{\paragraphautorefname}{Absatz}%
+			\renewcommand*{\subparagraphautorefname}{Unterabsatz}%
+			\renewcommand*{\footnoteautorefname}{Fu\"snote}%
+			\renewcommand*{\FancyVerbLineautorefname}{Zeile}%
+			\renewcommand*{\theoremautorefname}{Theorem}%
+			\renewcommand*{\appendixautorefname}{Anhang}%
+			\renewcommand*{\equationautorefname}{Gleichung}%        
+			\renewcommand*{\itemautorefname}{Punkt}%
+                }%  
+            % Fix to getting autorefs for subfigures right (thanks to Belinda Vogt for changing the definition)
+            \providecommand{\subfigureautorefname}{\figureautorefname}%             
+    }{\relax}
+\makeatother
+
+
+% ****************************************************************************************************
+% 7. Last calls before the bar closes
+% ****************************************************************************************************
+% ********************************************************************
+% Development Stuff
+% ********************************************************************
+\listfiles
+%\PassOptionsToPackage{l2tabu,orthodox,abort}{nag}
+%   \usepackage{nag}
+%\PassOptionsToPackage{warning, all}{onlyamsmath}
+%   \usepackage{onlyamsmath}
+
+% ********************************************************************
+% Last, but not least...
+% ********************************************************************
+\usepackage{tesis} 
+% ****************************************************************************************************
+
+
+% ****************************************************************************************************
+% 8. Further adjustments (experimental)
+% ****************************************************************************************************
+% ********************************************************************
+% Changing the text area
+% ********************************************************************
+%\linespread{1.05} % a bit more for Palatino
+%\areaset[current]{312pt}{761pt} % 686 (factor 2.2) + 33 head + 42 head \the\footskip
+%\setlength{\marginparwidth}{7em}%
+%\setlength{\marginparsep}{2em}%
+
+% ********************************************************************
+% Using different fonts
+% ********************************************************************
+%\usepackage[oldstylenums]{kpfonts} % oldstyle notextcomp
+%\usepackage[osf]{libertine}
+%\usepackage[light,condensed,math]{iwona}
+%\renewcommand{\sfdefault}{iwona}
+%\usepackage{lmodern} % <-- no osf support :-(
+%\usepackage{cfr-lm} % 
+%\usepackage[urw-garamond]{mathdesign} <-- no osf support :-(
+%\usepackage[default,osfigures]{opensans} % scale=0.95 
+%\usepackage[sfdefault]{FiraSans}
+% ****************************************************************************************************
+
+
+%********************************************************************
+% Colores en color
+%*******************************************************
+
+
+%*******************************************************
+%*******************************************************
+%Colores para versión virtual:
+% \definecolor[named]{ugrOrange}{rgb}{.945,.365,.165} % PANTONE 179: {R:241, G:93, B:42}
+% \definecolor[named]{ugrGray}{rgb}{.463,.482,.494}
+% \definecolor[named]{darkOrange}{rgb}{.8,.3,0}
+%*******************************************************
+%*******************************************************
+
+%*******************************************************
+%*******************************************************
+%Colores para imprimir
+%\definecolor[named]{ugrOrange}{rgb}{.463,.482,.494} % PANTONE 179: {R:241, G:93, B:42}
+%\definecolor[named]{ugrGray}{rgb}{.463,.482,.494}
+%\definecolor[named]{darkOrange}{rgb}{.263,.282,.294}
+
+%\definecolor[named]{myred}{red}
+%\definecolor[named]{mygreen}{green}
+%\definecolor[named]{myblue}{blue}
+
+
+
+
+\colordepende{
+    \definecolor[named]{ugrOrange}{rgb}{.945,.365,.165} % PANTONE 179: {R:241, G:93, B:42}
+    \definecolor[named]{ugrGray}{rgb}{.463,.482,.494}
+    \definecolor[named]{darkOrange}{rgb}{.8,.3,0}
+    }{
+    \definecolor[named]{ugrOrange}{rgb}{.463,.482,.494} % PANTONE 179: {R:241, G:93, B:42}
+    \definecolor[named]{ugrGray}{rgb}{.463,.482,.494}
+    \definecolor[named]{darkOrange}{rgb}{.263,.282,.294}
+
+    \usemintedstyle{bw} % Para que el resaltado de código emplee blanco y negro
+    }
+
+
+
+%*******************************************************
+%*******************************************************
+
+
+\definecolor[named]{Black}{gray}{0}
+
+%\definecolor[named]{ultralightOrange}{rgb}{1,.94,.72}
+%\definecolor[named]{highlightOrange}{rgb}{1,.86,.29}
+%\definecolor[named]{lightOrange}{rgb}{1,.45,0}
+%\definecolor[named]{darkOrange}{rgb}{.8,.3,0}
+
+\definecolor[named]{minimumOrange}{rgb}{1,.976,.474}
+%\definecolor[named]{ugrOrange}{rgb}{.945,.365,.165} % PANTONE 179: {R:241, G:93, B:42}
+%\definecolor[named]{ugrOrange}{cmyk}{0,.309,.368,0} % PANTONE 179: {C:0, M:79, Y:94, K:0}
+%\definecolor[named]{ugrGray}{rgb}{.463,.482,.494}
+\definecolor[named]{Gray}{rgb}{.463,.482,.494}
+
+%\definecolorseries{ugrOrangeSerie}{rgb}{last}{ugrOrange}{white}
+%\resetcolorseries[10]{ugrOrangeSerie}
+
+\colorlet{ultralightOrange}{ugrOrange!5!minimumOrange}
+\colorlet{highlightOrange}{ugrOrange!25!minimumOrange}
+\colorlet{lighterOrange}{ugrOrange!40!minimumOrange}
+\colorlet{lightOrange}{ugrOrange!75!minimumOrange}
+
+\definecolor{colorCorporativoMasSuave}{named}{ultralightOrange}
+\definecolor{colorCorporativoSuave}{named}{highlightOrange}
+\definecolor{colorCorporativoMedioSuave}{named}{lighterOrange}
+\definecolor{colorCorporativoMedio}{named}{lightOrange}
+\definecolor{colorCorporativo}{named}{ugrOrange}
+\definecolor{colorCorporativoOscuro}{named}{darkOrange}
+\definecolor{Maroon}{named}{colorCorporativoOscuro}
+
+\definecolor{headColor}{named}{white}%{colorCorporativoMasSuave}
+\definecolor{titleNumbercolor}{named}{ugrGray}
+\definecolor{titlecolor}{named}{ugrOrange}
+\definecolor{alternateTitlecolor}{named}{darkOrange}
+
+\newcolumntype{A}{%
+>{\color{black}\columncolor{colorCorporativoSuave}}%
+p{0.95\textwidth}}
+
+\newcolumntype{B}{%
+>{\color{black}\columncolor{colorCorporativoMasSuave}}%
+p{0.95\textwidth}}
+
+\newcolumntype{C}{%
+>{\columncolor{colorCorporativoSuave}}p{\textwidth}}
+%>{\columncolor{colorCorporativo}}p{4pt}}
+
+\newcolumntype{D}{%
+>{\color{black}\fontfamily{pbk}\selectfont\columncolor{colorCorporativoSuave}}p{8em}}
+%>{\columncolor{colorCorporativo}}p{4pt}
+
+
+% %********************************************************************
+% % Colores a imprimir
+% %*******************************************************
+
+% \definecolor[named]{Black}{gray}{0}
+
+% %\definecolor[named]{ultralightOrange}{rgb}{1,.94,.72}
+% %\definecolor[named]{highlightOrange}{rgb}{1,.86,.29}
+% %\definecolor[named]{lightOrange}{rgb}{1,.45,0}
+% \definecolor[named]{darkOrange}{rgb}{.8,.3,0}
+
+% \definecolor[named]{minimumOrange}{rgb}{1,.976,.474}
+% \definecolor[named]{ugrOrange}{rgb}{.945,.365,.165} % PANTONE 179: {R:241, G:93, B:42}
+% %\definecolor[named]{ugrOrange}{cmyk}{0,.309,.368,0} % PANTONE 179: {C:0, M:79, Y:94, K:0}
+% \definecolor[named]{ugrGray}{rgb}{.463,.482,.494}
+% \definecolor[named]{Gray}{rgb}{.463,.482,.494}
+
+% %\definecolorseries{ugrOrangeSerie}{rgb}{last}{ugrOrange}{white}
+% %\resetcolorseries[10]{ugrOrangeSerie}
+
+% \colorlet{ultralightOrange}{ugrOrange!5!minimumOrange}
+% \colorlet{highlightOrange}{ugrOrange!25!minimumOrange}
+% \colorlet{lighterOrange}{ugrOrange!40!minimumOrange}
+% \colorlet{lightOrange}{ugrOrange!75!minimumOrange}
+
+% \definecolor{colorCorporativoMasSuave}{named}{ultralightOrange}
+% \definecolor{colorCorporativoSuave}{named}{highlightOrange}
+% \definecolor{colorCorporativoMedioSuave}{named}{lighterOrange}
+% \definecolor{colorCorporativoMedio}{named}{lightOrange}
+% \definecolor{colorCorporativo}{named}{ugrOrange}
+% \definecolor{colorCorporativoOscuro}{named}{darkOrange}
+% \definecolor{Maroon}{named}{colorCorporativoOscuro}
+
+% \definecolor{headColor}{named}{white}%{colorCorporativoMasSuave}
+% \definecolor{titleNumbercolor}{named}{ugrGray}
+% \definecolor{titlecolor}{named}{ugrOrange}
+% \definecolor{alternateTitlecolor}{named}{darkOrange}
+
+% \newcolumntype{A}{%
+% >{\color{black}\columncolor{colorCorporativoSuave}}%
+% p{0.95\textwidth}}
+
+% \newcolumntype{B}{%
+% >{\color{black}\columncolor{colorCorporativoMasSuave}}%
+% p{0.95\textwidth}}
+
+% \newcolumntype{C}{%
+% >{\columncolor{colorCorporativoSuave}}p{\textwidth}}
+% %>{\columncolor{colorCorporativo}}p{4pt}}
+
+% \newcolumntype{D}{%
+% >{\color{black}\fontfamily{pbk}\selectfont\columncolor{colorCorporativoSuave}}p{8em}}
+% %>{\columncolor{colorCorporativo}}p{4pt}
+
+
+
+
+
+%***************
+% Minitoc
+%***************
+
+\usepackage{minitoc}
+\mtcsettitle{minitoc}{\'Indice del cap\'itulo}
+
+\setcounter{minitocdepth}{1}
+
+% ***********************************
+% Parámetros para Lettrine (lo de la primera letra más grande en los comienzos de los capítulos)
+% **************************
+
+\usepackage{lettrine}
+
+
+\setcounter{DefaultLines}{2}
+\renewcommand{\DefaultLoversize}{0.1} %0.25
+\renewcommand{\DefaultLraise}{0.3} %0.25
+\renewcommand{\DefaultLhang}{0.5} %0.5
+\setlength{\DefaultFindent}{0pt}%0.5em}
+\setlength{\DefaultNindent}{0pt}%0.1em}
+\setlength{\DefaultSlope}{0pt}
+\renewcommand{\LettrineFontHook}{\color{colorCorporativoOscuro}\fontfamily{fau}}%{fau}pzc}\fontseries{bx}\fontshape{it}}
+\renewcommand{\LettrineTextFont}{\color{colorCorporativoOscuro}\fontfamily{fau}\scshape}
+
+
+\usepackage{changepage}
+
+
+%Para las multirows
+\usepackage{multirow}
+
+%Espacio detrás del párrafo
+\parskip = 6pt
+
+%Para hacer diagramas dentro del propio LATEX
+\usepackage{graphicx}
+\usepackage[all]{xy}
+\usepackage{tikz}
+
+\usetikzlibrary{arrows,shadows,snakes}
+%\usetikzlibrary{arrows.meta}
+\usetikzlibrary{shapes,arrows,intersections,backgrounds}
+\usetikzlibrary{matrix,fit,calc,trees,positioning,arrows,chains,shapes.geometric,shapes}
+\usetikzlibrary{intersections}
+\usetikzlibrary{positioning}
+
+%Para poder hacer gráficas de conjuntos de datos
+\usepackage{pgfplots}
+\pgfdeclarelayer{background}
+%\pgfsetlayers{background}
+
+\pgfkeys{/pgf/number format/.cd,1000 sep={\,}}
+
+\definecolor{butter1}{rgb}{0.988,0.914,0.310}
+\definecolor{chocolate1}{rgb}{0.914,0.725,0.431}
+\definecolor{chameleon1}{rgb}{0.541,0.886,0.204}
+\definecolor{skyblue1}{rgb}{0.447,0.624,0.812}
+\definecolor{plum1}{rgb}{0.678,0.498,0.659}
+\definecolor{scarletred1}{rgb}{0.937,0.161,0.161}
+
+\pgfplotscreateplotcyclelist{miscolores}{
+ {butter1},{chocolate1},{chameleon1},{skyblue1},{plum1},{scarletred1}}
+
+%Para hacer gráficas de tarta
+%\usepackage{pgf-pie}
+
+%Para arreglar el error del resizebox en el tikz
+
+\tikzset{
+every picture/.append style={
+  execute at begin picture={\deactivatequoting},
+  execute at end picture={\activatequoting}
+  }
+}
+\AtBeginEnvironment{tikzpicture}{\shorthandoff{>}\shorthandoff{<}}{}{}
+
+\deactivatequoting
+
+
+% ********************************************************************
+% Para el aspecto gráfico molón
+%*******************************************************
+\DeclareCaptionFont{titlecolor}{\color{titlecolor}\fontfamily{pbk}\selectfont}
+\DeclareCaptionFont{alternateTitlecolor}{\color{alternateTitlecolor}\fontfamily{pbk}\selectfont}
+\captionsetup{justification=justified,format=plain,labelsep=newline,font=scriptsize,labelfont=titlecolor,textfont=alternateTitlecolor}%
+\captionsetup[algorithm]{justification=justified,format=plain,labelsep=newline,font=scriptsize,labelfont=titlecolor,textfont=alternateTitlecolor}%
+% ********************************************************************
+% Where to look for graphics
+%*******************************************************
+%\graphicspath{{gfx/}{misc/}} % considered harmful according to l2tabu
+% ********************************************************************
+% Hyperreferences
+%*******************************************************
+\hypersetup{%
+    colorlinks=true, linktocpage=true, pdfstartpage=3, pdfstartview=FitV,%
+    breaklinks=true, pdfpagemode=UseNone, pageanchor=true, pdfpagemode=UseOutlines,%
+    plainpages=false, bookmarksnumbered, bookmarksopen=true, bookmarksopenlevel=1,%
+    hypertexnames=true, pdfhighlight=/O,%hyperfootnotes=true,%nesting=true,%frenchlinks,%
+    urlcolor=colorCorporativoOscuro, linkcolor=alternateTitlecolor, citecolor=Maroon, %pagecolor=RoyalBlue,%
+    % uncomment the following line if you want to have black links (e.g., for printing)
+    %urlcolor=Black, linkcolor=Black, citecolor=Black, %pagecolor=Black,%
+    urlcolor=Gray, linkcolor=Gray, citecolor=Gray, %pagecolor=Black,%
+    pdftitle={\myTitle},%
+    pdfauthor={\textcopyright\ \myName, \myUni, \myFaculty},%
+    pdfsubject={},%
+    pdfkeywords={},%
+    pdfcreator={pdfLaTeX},%
+    pdfproducer={LaTeX with hyperref and classicthesis}%
+}
+
+% Parámetros para Lettrine (lo de la primera letra más grande en los comienzos de los capítulos)
+%
+\setcounter{DefaultLines}{2}
+\renewcommand{\DefaultLoversize}{0.1} %0.25
+\renewcommand{\DefaultLraise}{0.3} %0.25
+\renewcommand{\DefaultLhang}{0.5} %0.5
+\setlength{\DefaultFindent}{0pt}%0.5em}
+\setlength{\DefaultNindent}{0pt}%0.1em}
+\setlength{\DefaultSlope}{0pt}
+\renewcommand{\LettrineFontHook}{\color{colorCorporativoOscuro}\fontfamily{fau}}%{fau}pzc}\fontseries{bx}\fontshape{it}}
+\renewcommand{\LettrineTextFont}{\color{colorCorporativoOscuro}\fontfamily{fau}\scshape}
+
+\pagenumbering{roman}
+\pagestyle{scrheadings}%{plain}
+
+\renewcommand{\labelenumii}{\arabic{enumii}.}
+
+
+
+%COLORES DE LOS DIAGRAMAS
+
+
+
+%PARA REFERENCIAR SUBFIGURAS:
+\captionsetup[subfigure]{subrefformat=simple,labelformat=simple,listofformat=subsimple}
+\renewcommand\thesubfigure{(\alph{subfigure})}
+\captionsetup[subfigure]{justification=centering}
+
+%DEFINICIONES
+\newtheorem{SmartCitydef}{Definici\'on}
+
+%Para las tablas con lineas diagonales
+\usepackage{diagbox}
+
+%PARA QUE SALGAN TAMBIÉN LOS PARRAFOS EN EL INDICE:
+% \setcounter{secnumdepth}{4}
+% \cftsetindents{section}{0.3in}{0.3in}
+% \cftsetindents{subsection}{0.4in}{0.4in}
+% \cftsetindents{subsubsection}{0.5in}{0.5in}
+% \cftsetindents{paragraph}{0.6in}{0.6in}
+
+\setcounter{secnumdepth}{4}
+\cftsetindents{section}{0.4in}{0.4in}
+\cftsetindents{subsection}{0.5in}{0.5in}
+\cftsetindents{subsubsection}{0.6in}{0.6in}
+\cftsetindents{paragraph}{0.7in}{0.7in}
+
+%PARA HACER DIAGRAMAS DE BITS
+\usepackage{bytefield}
+\RequirePackage[numberFieldsOnce,bigEndian,numberBitsAbove]{bitpattern}
+\renewcommand\bpFormatBitNumber[1]{{\tiny\ttfamily\emph{\strut#1}}}
+\renewcommand\bpFormatField[1]{{\scriptsize\ttfamily\strut#1}}
+
+%PARA QUE SALGAN LA FIGURAS NUMERADAS COMO CAPITULO MÁS NÚMERO
+\numberwithin{figure}{chapter}
+\numberwithin{table}{chapter}
+\numberwithin{equation}{chapter}
+\numberwithin{algorithm}{chapter}
+
+%PARA QUE LAS TABLAS SALGAN DONDE TIENEN QUE SALIR, NO SE VAYAN A OTRA SECCIÓN
+\usepackage[section]{placeins}
+
+
+%Para tener glosarios:
+%\usepackage[style=long,nolist]{glossaries}
+%\usepackage[xindy]{glossaries}
+%\usepackage[style=long,nolist]{glossaries}
+%\usepackage[style=long, nonumberlist, toc, xindy, nowarn, nomain, section=chapter]{glossaries}
+%\usepackage[style=long, toc, xindy, section=chapter]{glossaries}
+%\usepackage[style=indexhypergroup, toc, xindy, section=chapter]{glossaries}
+\usepackage[style=treegroup, toc, xindy, section=chapter]{glossaries}
+
+\newglossarystyle{mytreegroup}{%
+  \glossarystyle{treegroup}%
+  \renewenvironment{theglossary}%
+    {\setlength{\parindent}{0pt}%
+     \setlength{\parskip}{0pt plus 0.3pt}}%
+    {}%
+  \renewcommand*{\glossaryheader}{}%
+  \renewcommand*{\glsgroupheading}[1]{}%
+  \renewcommand{\glossaryentryfield}[5]{%
+    \hangindent0pt\relax
+    \parindent0pt\relax
+    %\glsentryitem{##1}\textbf{\glstarget{##1}{##2}}%
+    \glsentryitem{##1}\glstarget{##1}{##2}%
+    \ifx\relax##4\relax
+    \else
+      \space(##4)%
+    \fi %\dotfill
+    \dotfill ##5 \\ \space ##3\glspostdescription \\\par }%
+  \renewcommand{\glossarysubentryfield}[6]{%
+    \hangindent##1\glstreeindent\relax
+    \parindent##1\glstreeindent\relax
+    \ifnum##1=1\relax
+      \glssubentryitem{##2}%
+    \fi
+    \textbf{\glstarget{##2}{##3}}%
+    \ifx\relax##5\relax
+    \else
+      \space(##5)%
+    \fi
+    \space##4\glspostdescription\space ##6\par}%
+  \renewcommand*{\glsgroupskip}{\indexspace}
+  \renewcommand{\glsgroupheading}[1]{\par
+    \noindent\textbf{\glsgetgrouptitle{##1}}\par\indexspace}%
+}
+\glossarystyle{mytreegroup}
+
+%\usepackage[style=long,nolist]{glossaries}
+%Cargamos el glosario
+
+\input{FrontBackmatter/glosario}
+
+
+% Para los símbolos
+\usepackage{pifont}% http://ctan.org/pkg/pifont
+\newcommand{\cmark}{\ding{51}}%
+\newcommand{\xmark}{\ding{55}}%
+
+% Para añadir relojes
+\usepackage{xparse}
+
+\NewDocumentCommand{\Clock}{O{2cm}O{\large}O{cyan}O{0}O{90}O{120}O{270}}{%
+%\def\radius{ (#1-3)*(-30)   }%
+\def\radius{#1}%
+\def\thora{#4}%
+\def\tmin{#5}%
+\def\tseg{#6}%
+
+\begin{tikzpicture}[line cap=rect,line width=0.055*\radius]
+\filldraw [fill=#3] (0,0) circle [radius=\radius];
+\foreach \angle [count=\xi] in {60,30,...,-270}
+{
+  \draw[line width=1pt] (\angle:0.9*\radius) -- (\angle:\radius);
+  \node[font=#2] at (\angle:0.68*\radius) {\textsf{\xi}};
+}
+\foreach \angle in {0,90,180,270}
+  \draw[line width=0.04*\radius] (\angle:0.82*\radius) -- (\angle:\radius);
+
+\draw (0,0) -- ({(\tmin-15)*(-6)}:0.5*\radius);
+\draw [black!50,line width=2pt] (0,0) -- ({(\thora-3)*(-30)}:0.3*\radius);
+\draw [red, line width=1pt] (0,0) -- ({(\tseg-15)*(-6)}:0.7*\radius);
+\end{tikzpicture}%
+}
+
+%Para aumentar el número de writers
+%\usepackage{morewrites}
+
+
+%Para añadir las tablas de los experimentos
+\NewDocumentCommand{\tablaExperimento}{O{Escenario}O{Monitorizaci\'on}O{Experimentos relacionados}O{Ambito}O{Publicado}O{Rango de Fechas}O{Dataset}O{Objetivos}}{%
+\vspace{-0.5cm}
+\hspace{-0.1cm}
+\resizebox{1\textwidth}{!}{%
+\begin{tikzpicture}[line cap=rect,line width=0.5]
+
+%\draw [help lines] (0,0) grid (16,6);
+
+\def\columnalarga{19.8cm}%
+\def\columna{9.8cm}%
+\def\mediacolumna{4.8cm}%
+\def\altocolumna{0.8cm}%
+\def\distanciatitulo{-0.5cm}%
+\def\distanciatitulobajo{-0.6cm}%
+
+\node[draw, text depth=0cm,rounded corners,align=center,text width=4cm, label={[gray,yshift=\distanciatitulobajo]above:{\emph{Número de experimento}}}, minimum width = \mediacolumna, minimum height = \altocolumna] at (2.5,5.5){\rule{0pt}{0.65cm} \LARGE \emph{\arabic{experimentos}} };
+
+\node[draw, text depth=0cm,rounded corners,align=center,text width=4cm, label={[gray,yshift=\distanciatitulo]above:{\emph{Escenario}}}, minimum width = \mediacolumna, minimum height = \altocolumna] at (7.5,5.5){\rule{0pt}{0.65cm} #1 };
+
+\node[draw, text depth=0cm,rounded corners,align=center,text width=4cm, label={[gray,yshift=\distanciatitulo]above:{\emph{Monitorizaci\'on}}}, minimum width = \mediacolumna, minimum height = \altocolumna] at (12.5,5.5){\rule{0pt}{0.65cm} #2 };
+
+\node[draw, text depth=0cm,rounded corners,align=center,text width=4cm, label={[gray,yshift=\distanciatitulobajo]above:{\emph{Relacionados}}}, minimum width = \mediacolumna, minimum height = \altocolumna] at (17.5,5.5){\rule{0pt}{0.65cm} #3 };
+
+\node[draw, text depth=0cm,rounded corners,align=center,text width=12cm, label={[gray,yshift=\distanciatitulo]above:{\emph{\'Ambito}}}, minimum width = \columnalarga, minimum height = \altocolumna] at (10,4.5){\rule{0pt}{0.65cm} #4 };
+
+%\node[draw, text depth=0cm,rounded corners,align=center,text width=9cm, label={[gray,yshift=\distanciatitulo]above:{\emph{\'Publicado en}}}, minimum width = \columna, minimum height = \altocolumna] at (15,4.5){\rule{0pt}{0.65cm} #5 };
+
+\node[draw, text depth=0cm,rounded corners,align=center,text width=9cm, label={[gray,yshift=\distanciatitulobajo]above:{\emph{Rango de fechas conjunto de datos}}}, minimum width = \columna, minimum height = \altocolumna] at (5,3.5){\rule{0pt}{0.65cm} #6 };
+
+\node[draw, text depth=0cm,rounded corners,align=center,text width=9cm, label={[gray,yshift=\distanciatitulobajo]above:{\emph{Características del conjunto de datos}}}, minimum width = \columna, minimum height = \altocolumna] at (15,3.5){\rule{0pt}{0.65cm} #7 };
+
+\node[draw, text depth=0cm,rounded corners,align=center,text width=12cm, label={[gray,yshift=\distanciatitulobajo]above:{\emph{\'Objetivos}}}, minimum width = \columnalarga, minimum height = \altocolumna] at (10,2.5){\rule{0pt}{0.65cm} #8 };
+\end{tikzpicture}
+}%
+}
+
+%Para poder referenciar los experimentos sin que aparezca el número de capítulo
+%\renewcommand{\thesubsection}{\arabic{subsection}}
+
+
+%Para añadir diagramas UML
+\usepackage{pgf-umlsd}
+
+%Notación:
+% Hebras: 
+
+
+%Para poder reajustar el tamaño de las imágenes tikz
+
+\newsavebox\mybox
+\newenvironment{resizedtikzpicture}[1]{%
+  \def\mywidth{#1}%
+  \begin{lrbox}{\mybox}%
+  \begin{tikzpicture}
+}{%
+  \end{tikzpicture}%
+  \end{lrbox}%
+  \resizebox{\mywidth}{!}{\usebox\mybox}%
+}
+
+
+%Arreglar error nocite
+\DeclareUnicodeCharacter{00A0}{ }
+
+%Para que no separe palabras por guiones:
+%\usepackage[none]{hyphenat}
+
+%Para añadir árboles de directorios
+\usepackage{dirtree}
+%\DTsetlength{0.5em}{1em}{0.2em}{0.4pt}{3.6pt}
+
+%Iconos
+
+
+\newcommand\iconFOLDER{\colordepende{\includegraphics[height=2.5ex]{gfx/Recursos/ficheros/folder.pdf}}{\includegraphics[height=2.5ex]{gfx/Recursos/ficheros/gris/folder.pdf}} \hspace*{0.01ex}}
+\newcommand\iconFILE{\includegraphics[height=2.5ex]{gfx/Recursos/ficheros/file.pdf}
+ \hspace*{0.01ex}}
+\newcommand\iconSD{\includegraphics[height=2.5ex]{gfx/Recursos/ficheros/sd.pdf}
+ \hspace*{0.01ex}}
+
+%Solventa el problema de "no room for a new \write"
+\usepackage{morewrites}
+
+%Emplea como sepador decimal un punto, en lugar de una coma
+\spanishdecimal{.}
+
+%No parte palabras en los títulos NO FUNCIONA
+
+%\usepackage[raggedright]{titlesec}
+
+%
+% Diagramas ER
+%
+
+%\usepackage{tikz-er2}
+% Include tikz library for more control over positioning
+%\usetikzlibrary{positioning}
+% Styling for entities, attributes, and relationships
+%\tikzstyle{every entity} = [draw=blue!50!black!100, fill=blue!20]
+%\tikzstyle{every attribute} = [draw=yellow!50!black!100, fill=yellow!20]
+%\tikzstyle{every relationship} = [draw=green!50!black!100, fill=green!20]
+
+
+
+%Añadir un listado de experimentos al índice
+
+\usepackage{tocloft}
+
+\newcommand{\listExperimentosname}{\'Indice de estudios}
+
+\newlistof{Experimentos}{exp}{\listExperimentosname}
+
+\newcounter{experimentos}
+%Hace que el contador sea dependiente del capítulo
+%\numberwithin{experimentos}{chapter}
+\numberwithin{experimentos}{section}
+%\numberwithin{experimentos}{subsection}
+
+%\addtolength{\cftExperimentosnumwidth}{15pt}
+%\cftsetindents{Experimentos}{0.7in}{0.7in}
+\cftsetindents{Experimentos}{0cm}{0cm}
+%\setlength{\cftExperimentosnumwidth}{1.1cm}
+%\renewcommand{\cftExperimentosaftersnumb}{\hspace{1.5em}}
+ 
+
+%\setlength\cftExperimentosindent{1.5em}
+%\renewcommand{\cftExperimentosafterpnum}{\cftparfillskip}
+
+
+%\setlength{\cftbeforechapskip}{0.3cm}
+
+% \setcounter{secnumdepth}{4}
+% \cftsetindents{section}{0.4in}{0.4in}
+% \cftsetindents{subsection}{0.5in}{0.5in}
+% \cftsetindents{subsubsection}{0.6in}{0.6in}
+% \cftsetindents{paragraph}{0.7in}{0.7in}
+
+
+%  \renewcommand{\cftExperimentospresnum}{\scshape\MakeTextLowercase}% 
+%          \renewcommand{\cftExperimentosfont}{\normalfont}%                 
+%        \ifthenelse{\boolean{@dottedtoc}}{\relax}%
+%        {%
+%            \renewcommand{\cftExperimentosleader}{\hspace{1.5em}}% 
+%            \renewcommand{\cftExperimentosafterpnum}{\cftparfillskip}%
+%        }
+%        \renewcommand{\cftExperimentospresnum}{\figurename~}%Fig.~}
+%        \newlength{\Experimentoslabelwidth}
+%        \settowidth{\Experimentoslabelwidth}{\cftfigpresnum~999}
+%        \addtolength{\Experimentoslabelwidth}{2.5em}
+%        %\cftsetindents{Experimentos}{0em}{15pt}
+% %\cftsetrmarg{15pt}
+
+%\renewcommand*{\listtablename}{\hfill\bfseries\normalsize\MakeUppercase{Lista de Tabelas}\hfill}
+% Not this:
+%\renewcommand{\cfttabfont}{Tabela }
+% But this:
+%\renewcommand{\cfttabpresnum}{Tabela~}
+%\renewcommand{\cfttabaftersnum}{ ---}
+%\setlength{\cfttabindent}{0pt}
+% Both \cfttabindent and \cfttabnumwidth need to be changed
+%\cftsetindents{table}{0pt}{5.5em}% Adjust 5.5em if necessary
+
+%\newcommand{\Experimento}[1]{%
+%\refstepcounter{experimentos}
+%Estudio \thechapter.\arabic{experimentos}: #1
+%\addcontentsline{exp}{Experimentos}
+%{\protect Estudio \numberline{\thechapter.\arabic{experimentos}}#1}}
+
+\newcommand{\Experimento}[1]{BORRAR}
+
+%Bordes al rededor de los experimentos
+
+\makeatletter
+\newcommand*{\currentname}{\@currentlabelname}
+\makeatother
+
+
+
+\usepackage{tcolorbox}
+\tcbuselibrary{breakable}
+\tcbuselibrary{skins}
+
+%black!6!white
+
+\newenvironment{experimento}[1][--]
+{\refstepcounter{experimentos}\begin{tcolorbox}[breakable, oversize, colback=black!4!white, parbox=false,title={Estudio \thesection.\arabic{experimentos}: #1}]
+\addcontentsline{exp}{Experimentos}
+{\protect Estudio \numberline{\thesection.\arabic{experimentos}}\\ {\scriptsize \currentname} \\#1}}
+{\end{tcolorbox}}
+
+\newenvironment{experimentoNoframe}[1][--]
+{\refstepcounter{experimentos}\begin{tcolorbox}[skin=enhancedfirst jigsaw, oversize,colback=white,parbox=false,title={{\scriptsize \currentname}\\Estudio \thesection.\arabic{experimentos}: #1}]
+\addcontentsline{exp}{Experimentos}
+{\protect Estudio \numberline{\thesection.\arabic{experimentos}} \\ {\scriptsize \currentname} \\#1}\end{tcolorbox}\vspace{-0.85cm}}
+{\FloatBarrier\vspace{-0.85cm}\begin{tcolorbox}[skin=enhancedlast jigsaw, oversize, opacityback=0,colback=white,parbox=false]\end{tcolorbox}}
+
+\newtcolorbox{marker}[1][]{enhanced,
+  before skip=2mm,after skip=3mm,
+  boxrule=0.4pt,left=5mm,right=2mm,top=1mm,bottom=1mm,
+  colback=yellow!50,
+  colframe=yellow!20!black,
+  sharp corners,rounded corners=southeast,arc is angular,arc=3mm,
+  underlay={%
+    \path[fill=tcbcol@back!80!black] ([yshift=3mm]interior.south east)--++(-0.4,-0.1)--++(0.1,-0.2);
+    \path[draw=tcbcol@frame,shorten <=-0.05mm,shorten >=-0.05mm] ([yshift=3mm]interior.south east)--++(-0.4,-0.1)--++(0.1,-0.2);
+    \path[fill=yellow!50!black,draw=none] (interior.south west) rectangle node[white]{\Huge\bfseries !} ([xshift=4mm]interior.north west);
+    },
+  drop fuzzy shadow,#1}
+
+
+% ********************************************************************
+% Para el aspecto gráfico molón
+%*******************************************************
+\DeclareCaptionFont{titlecolor}{\color{titlecolor}\fontfamily{pbk}\selectfont}
+\DeclareCaptionFont{alternateTitlecolor}{\color{alternateTitlecolor}\fontfamily{pbk}\selectfont}
+\captionsetup{justification=justified,format=plain,labelsep=newline,font=scriptsize,labelfont=titlecolor,textfont=alternateTitlecolor}%
+
+\newcommand\conclusiones{\tcblower {\color{titlecolor} Conclusiones}
+}
+
+\newcommand{\micite}[1]{\cite{#1}{\tiny\graffito{\cite{#1} \citefield{#1}{title}}}}
+\newcommand{\miciteJMN}[1]{{\tiny\graffito{\cite{#1} \citefield{#1}{title}}}}
+
+
+\newcommand{\gracias}[1]{\begin{flushleft}\titlerule\emph{#1:}\end{flushleft}\vspace{-1em}}
+
+
+
+%Para añadir las conclusiones:
+
+
+\newcounter{conclusiones}[section]
+
+%\numberwithin{conclusiones}{section}
+
+\newenvironment{conclusion}[1][]{\refstepcounter{conclusiones}\par\medskip
+   \textbf{Conclusi\'on~\thesection.\theconclusiones. #1} \rmfamily}{\medskip}
+ 
+ 
+
+
+

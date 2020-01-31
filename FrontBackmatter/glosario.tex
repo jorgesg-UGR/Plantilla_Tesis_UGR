@@ -1,0 +1,88 @@
+
+%PLANTILLA 
+%\newglossaryentry{ex}{name={sample},plural={},first={},description={an example}}
+
+
+% \newglossaryentry{<label>}{<key-val list>}
+% The first argument <label> is a unique label so that you can refer to this entry in your document text. The entry will only appear in the glossary if you have referenced it in the document using one of the commands listed later. The second argument is a comma-separated list of <key>=<value> options. Common keys are:
+
+% name
+% The name of the entry (as it will appear in the glossary).
+
+% description
+% A brief description of this entry (to appear in the glossary).
+
+% text
+% How this entry will appear in the document text where the singular form is required. If this key is omitted the value of name will be used.
+
+% first
+% How this entry will appear in the document text the first time it is used, where the first use requires the singular form. If this key is omitted the value of text is used.
+
+% plural
+% How this entry will appear in the document text where the plural form is required. If this key is omitted, the value is obtained by appending the letter “s” to the value of the text key.
+
+% firstplural
+% How this entry will appear in the document text the first time it is used, where the first use requires the plural form. If this field is omitted, the value is obtained by appending the letter “s” to the value of the first key.
+
+% symbol
+% This key is provided to allow the user to specify an associated symbol, but most glossary styles ignore this value.
+
+% sort
+% This value indicates how to sort this entry (analogous to using the @ character in the argument of \index, as described in §6.1.1. Creating an Index (makeidx package)). If this key is omitted the value of name is used.
+
+% type
+% This is the glossary type to which this entry belongs (see §6.1.2. Defining New Glossaries). If omitted the main (default) glossary is assumed.
+
+% Description of commands used in above example:
+
+% \gls{<label>}
+% This command prints the term associated with <label> passed as its argument. If the hyperref package was loaded before glossaries it will also be hyperlinked to the entry in glossary.
+
+% \glspl{<label>}
+% This command prints the plural of the defined term, other than that it behaves in the same way as gls.
+
+% \Gls{<label>}
+% This command prints the singular form of the term with the first character converted to upper case.
+
+% \Glspl{<label>}
+% This command prints the plural form with first letter of the term converted to upper case.
+
+% \glslink{<label>}{<alternate text>}
+% This command creates the link as usual, but typesets the alternate text instead. It can also take several options which changes its default behavior (see the documentation).
+
+% \glssymbol{<label>}
+% This command prints what ever is defined in \newglossaryentry{<label>}{symbol={Output of glssymbol}, ...}
+
+% \glsdesc{<label>}
+% This command prints what ever is defined in \newglossaryentry{<label>}{description={Output of glsdesc}, ...}
+
+
+
+%\makenoidxglossaries
+
+\renewcommand{\glsnamefont}[1]{\spacedlowsmallcaps{#1}}
+
+%\renewcommand{\glstreenamefmt}[1]{\spacedlowsmallcaps{#1}}
+
+
+
+
+
+\makeglossaries
+%\newglossaryentry{sample}{name={sample}, description={a sample entry}}
+
+% \newglossaryentry{ex}{name={sample},description={an example}}
+
+
+% \newglossaryentry{potato}{name={potato},plural={potatoes},
+% description={starchy tuber}}
+% \newglossaryentry{pikachu}{name={pikachu},plural={pikachus},
+% description={pokemon ratón eléctrico}}
+
+% \newglossaryentry{cabbage}{name={cabbage},
+% description={vegetable with thick green or purple leaves}}
+
+% \newglossaryentry{carrot}{name={carrot},
+% description={orange root}}
+
+\input{glosario.tex}

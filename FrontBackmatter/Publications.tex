@@ -1,0 +1,72 @@
+%*******************************************************
+% Publications
+%*******************************************************
+\pdfbookmark[1]{Publicaciones}{publicaciones}
+\chapter*{Publicaciones}
+
+%\graffito{This is just an early --~and currently ugly~-- test!}
+%This might come in handy for PhD theses: some ideas and figures have appeared previously in the following publications:
+
+%\noindent Put your publications from the thesis here. The packages \texttt{multibib} or \texttt{bibtopic} etc. can be used to handle multiple different bibliographies in your document.
+
+Este trabajo de tesis se avala con los siguientes artículos en revista:
+
+\begin{refsection}[jcr]
+    \DeclareFieldFormat{labelnumberwidth}{}
+    \setlength{\biblabelsep}{0pt}
+    \small
+    \nocite{*} % is local to to the enclosing refsection
+    \printbibliography[heading=none]
+\end{refsection}
+
+Adicionalmente, se ha publicado un capítulo de libro:
+
+\begin{refsection}[libros]
+    \DeclareFieldFormat{labelnumberwidth}{}
+    \setlength{\biblabelsep}{0pt}
+    \small
+    \nocite{*} % is local to to the enclosing refsection
+    \printbibliography[heading=none]
+\end{refsection}
+
+Las siguientes participaciones en congresos:
+
+\begin{refsection}[congresos]
+    \DeclareFieldFormat{labelnumberwidth}{}
+    \setlength{\biblabelsep}{0pt}
+    \small
+    \nocite{*} % is local to to the enclosing refsection
+    \printbibliography[heading=none]
+\end{refsection}
+
+Aunque no estén directamente relacionados con la temática de la tesis, las técnicas y procedimientos aprendidos han sido también empleados en artículos de otras líneas de investigación del autor:
+
+\begin{refsection}[jcrNO]
+    \DeclareFieldFormat{labelnumberwidth}{}
+    \setlength{\biblabelsep}{0pt}
+    \small
+    \nocite{*} % is local to to the enclosing refsection
+    \printbibliography[heading=none]
+\end{refsection}
+
+Como colaboración en artículos de revista de otros investigadores\footnote{La inclusión de estos artículos es únicamente a nivel curricular. Ninguno de las partes de dichos artículos son empleados en ninguna de las partes de esta tesis Doctoral.}:
+
+\begin{refsection}[jcrNONO]
+    \DeclareFieldFormat{labelnumberwidth}{}
+    \setlength{\biblabelsep}{0pt}
+    \small
+    \nocite{*} % is local to to the enclosing refsection
+    \printbibliography[heading=none]
+\end{refsection}
+
+Adicionalmente, en otras líneas de investigación no directamente relacionadas con la tesis, se han publicado los siguientes trabajos en congresos:
+
+\begin{refsection}[congresosNO]
+    \DeclareFieldFormat{labelnumberwidth}{}
+    \setlength{\biblabelsep}{0pt}
+    \small
+    \nocite{*} % is local to to the enclosing refsection
+    \printbibliography[heading=none]
+\end{refsection}
+
+%\emph{Attention}: This requires a separate run of \texttt{bibtex} for your \texttt{refsection}, \eg, \texttt{ClassicThesis1-blx} for this file. You might also use \texttt{biber} as the backend for \texttt{biblatex}. See also \url{http://tex.stackexchange.com/questions/128196/problem-with-refsection}.
